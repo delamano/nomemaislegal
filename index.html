@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nomemaislegal</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json" />
+    <meta name="theme-color" content="#A87E6F" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Nomemaislegal">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Georgia&family=Verdana&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'georgia': ['Georgia', 'serif'],
+              'verdana': ['Verdana', 'sans-serif'],
+              'courier-new': ['"Courier Prime"', 'monospace'],
+            },
+            colors: {
+              retro: { // Coffee shop theme
+                bg: '#F4F1E9', // Light beige
+                text: '#4A3F35', // Dark brown
+                primary: '#A87E6F', // Medium warm brown
+                'primary-hover': '#8A6657', // Darker brown for hover
+                card: '#FFFFFF',
+                border: '#DED8CF',
+                'progress-bg': '#EAE5E0',
+                'progress-fill': '#A87E6F',
+              },
+              geocities: { // Early wiki/web theme
+                 bg: '#FFFFFF',
+                 text: '#000000',
+                 link: '#002BB8',
+                 'link-hover': '#0055FF',
+                 title: '#000000',
+                 border: '#A2A9B1',
+                 card: '#F6F6F6',
+                 'progress-bg': '#CCCCCC',
+                 'progress-fill': '#3366CC',
+              }
+            },
+            keyframes: {
+              blink: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0 },
+              },
+              rainbow: {
+                '0%,100%': { color: '#ff0000' },
+                '14%': { color: '#ff7f00' },
+                '28%': { color: '#ffff00' },
+                '42%': { color: '#00ff00' },
+                '57%': { color: '#0000ff' },
+                '71%': { color: '#4b0082' },
+                '85%': { color: '#9400d3' },
+              }
+            },
+            animation: {
+              blink: 'blink 1.5s linear infinite',
+              rainbow: 'rainbow 3s linear infinite',
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/public/sw.js', { scope: '/' }).then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

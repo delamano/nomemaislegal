@@ -1,0 +1,24 @@
+{
+  "short_name": "Nomemaislegal",
+  "name": "Nomemaislegal: Votações de Nomes",
+  "description": "Crie e vote em tópicos sobre os nomes mais legais, engraçados e geniais da internet.",
+  "icons": [
+    {
+      "src": "/public/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/public/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#F4F1E9",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#A87E6F"
+}
